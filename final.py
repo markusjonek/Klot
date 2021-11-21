@@ -4,10 +4,7 @@ from ctypes import *
 import pygame
 import math
 import time
-from ctypes import *
 
-so_fil = "c_funktion.so"
-c_xy = CDLL(so_fil)
 
 
 SIZE = 900
@@ -88,18 +85,18 @@ class Klot:
                                         self.window.set_at(xy, SHADOW_COLOR)
 
     def draw_total(self):
-        start = time.time()
+        start = time.perf_counter()
         self.shadow_drawer()
-        mitt = time.time()
+        mitt = time.perf_counter()
         self.sphere_drawer()
-        slut = time.time()
+        slut = time.perf_counter()
         print("Skugga:", str(round(mitt-start, 2)) + "s",
               "\nKlot:  ", str(round(slut-mitt, 2)) + "s",
               "\nTotal: ", str(round(slut-start, 2)) + "s", "\n")
 
 
 def simple(window):
-    klot = Klot(window, 60, -50, 150, "red")
+    klot = Klot(window, 60, -50, 200, "red")
     klot.draw_total()
 
 
