@@ -6,5 +6,7 @@ brew install sdl2
 
 kompilera med
 ````
-bash Belyst_klot_compile.sh
+bash compile.sh Mandelbrot
+# eller
+bash compile.sh Belyst_klot
 `````
